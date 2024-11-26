@@ -5,19 +5,24 @@ export const Experience = (data: ExperienceType) => {
   return (
     <Stack direction='row' gap='30px'>
       {/* Date */}
-      <Typography color='#5b7289' fontSize={'14px'}>
-        {`${data.startDate.month} ${data.startDate.year} — ${data.endDate?`${data.endDate.month} ${data.endDate.year}`:'PRESENT'}`}
+      <Typography color='#5b7289' fontSize={'12px'} fontWeight={600} width={'25%'} marginTop={'4px'}>
+        {`${data.startDate.month} ${data.startDate.year} — ${data.endDate?`${data.endDate.month} ${data.endDate.year}`:'Present'}`}
       </Typography>
+
+
       {/* Right Column */}
-      <Stack direction='column' gap={1.5}>
+      <Stack direction='column' gap={1.5} width={'75%'}>
+
         {/* Title */}
         <Typography>{data.designation} . {data.organisation}</Typography>
+
         {/* Paras of details */}
         <Stack gap={0.5}>
           {data.details.map(detail => (
             <Typography color='#94a3b8' fontSize={'14px'} dangerouslySetInnerHTML={{__html: detail}} />
           ))}
         </Stack>
+
         {/* TechStack */}
         <Stack direction='row' gap={1}>
           {data.techStack.map(tech => (
