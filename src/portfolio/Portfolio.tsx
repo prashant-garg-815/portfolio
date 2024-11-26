@@ -1,6 +1,10 @@
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import React, {useRef, useEffect} from 'react';
-import styles from './Portfolio.module.scss'
+import styles from './Portfolio.module.scss';
+import { Info } from './infoPanel/TitleName.component';
+import Grid from '@mui/material/Grid2';
+import { RightPanel } from './Experiences/LargeScreenPanel.component';
+
 
 export const Portfolio = () => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -10,7 +14,6 @@ export const Portfolio = () => {
       rootRef.current.style.setProperty('--x', `${clientX}px`);
       rootRef.current.style.setProperty('--y', `${clientY}px`);
     }
-    console.log(clientX, clientY)
   }
   useEffect(() => {
     if(!rootRef) {
@@ -24,13 +27,21 @@ export const Portfolio = () => {
       ref={rootRef}
       className={styles.portfolioRoot}
       sx={{
-        height: '100vh',
+        minHeight: '100vh',
       }}
     >
       <Container
         className={styles.container}
       >
-          <Typography>Portfolio</Typography>
+          <Grid container spacing={2}>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <Info/>
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <RightPanel />
+            </Grid>
+          </Grid>
+          
       </Container>
     </Box>
   )
