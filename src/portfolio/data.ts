@@ -1,14 +1,21 @@
 export type Date = {
-  month: String;
+  month: string;
   year: Number;
 }
 export type Experience = {
   startDate: Date
   endDate?: Date
-  designation: String
-  organisation: String
+  designation: string
+  organisation: string
   details: string[]
-  techStack: String[]
+  techStack: string[]
+}
+
+export type Project = {
+  title: string;
+  description: string;
+  techStack: string[];
+  imageUrl: string;
 }
 
 
@@ -65,11 +72,20 @@ export const EXPERIENCE: Experience[] = [
     designation: 'System Engineer',
     organisation: 'TCS',
     details: [
-      'Built an <strong style="color: #e5e7eb">Ansible</strong> installer to install and setup <strong>Postgres</strong> and <strong>RabbitMq</strong>.',
+      'Built an <strong style=\'color: #e5e7eb\'>Ansible</strong> installer to install and setup <strong>Postgres</strong> and <strong>RabbitMq</strong>.',
       'Added two way authentication for postgres',
       'PocketIgnio ka DB normalisation'
     ],
     techStack: ['Ansible', 'Bash Scripting', 'SprintBoot']
+  }
+]
+
+export const projects: Project[] = [
+  {
+    title: 'Personal Portfolio',
+    description: 'Personal portfolio built using ReactJs and MUI.',
+    techStack: ['ReactJs', 'MUI'],
+    imageUrl: 'https://images.unsplash.com/photo-1709884735017-114f4a31f944?q=80&w=2129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   }
 ]
 

@@ -1,5 +1,5 @@
 import { Chip, Stack, Typography } from "@mui/material";
-import { Experience as ExperienceType } from "../../data";
+import { Experience as ExperienceType } from "../data";
 
 export const Experience = (data: ExperienceType) => {
   return (
